@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+  <title>Show Data</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Book Id</th>
+                    <th scope="col">Book Name</th>
+                    <th scope="col">Author Name</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            {% for obj in bookobj %}
+                <tr>
+                    <td>{{obj.book_id}}</td>
+                    <td>{{obj.book_name}}</td>
+                    <td>{{obj.author_name}}</td>
+                    <td><button class="btn btn-warning"><a href="{% url 'update_book' obj.id %}">Update</a></button></td>
+                    <td><button class="btn btn-danger"><a href="{% url 'deletebookentry' obj.id %}">Delete</a></button> </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

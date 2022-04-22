@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>Login</title>
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="jumbotron">
+      <form method="post">
+        {% csrf_token %}
+        <input type="email" name="em" placeholder="Enter Email Id" class="form-control"><br><br>
+        <input type="password" name = "ps" placeholder="Enter Password" class="form-control"><br><br>
+        
+        <button type="submit" class="btn btn-success">LOGIN</button>
+        <button class="btn btn-warning"><a href="#">Forgot Password</a></button>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

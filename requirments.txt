@@ -1,0 +1,6 @@
+Commands
+1)pip install django
+2)django-admin startapp
+3)pip install mysqlclient
+4)pip install django-crispy-forms
+5)pip install djangorestframework
